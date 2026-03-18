@@ -3,22 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prabhat - Odoo Developer & Freelancer</title>
+    <title>Prabhat | Odoo Expert & Freelance Developer</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
-    <div class="nav-logo">
-        <a href="#home">Prabhat</a>
-    </div>
+            <div class="nav-logo">
+                <a href="#home">
+                    <span class="logo-bracket">&lt;</span>
+                    Prabhat
+                    <span class="logo-bracket">/&gt;</span>
+                </a>
+            </div>
             <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#home" class="nav-link active">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
                 <li><a href="#modules" class="nav-link">Modules</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
@@ -33,169 +41,355 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Hi, I'm <span class="highlight">Prabhat</span></h1>
-            <h2>Odoo Developer & Freelancer</h2>
-            <p>Creating custom Odoo modules that solve real business problems. Specialized in Odoo 19 development, customization, and implementation.</p>
-            <div class="hero-buttons">
-                <a href="#modules" class="btn btn-primary">View Modules</a>
-                <a href="#contact" class="btn btn-secondary">Contact Me</a>
+            <div class="hero-badge">
+                <span class="typing-text"></span>
             </div>
-            <div class="social-links">
-                <a href="https://github.com/shabdprabhat" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/shabdprabhat" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://wa.me/917982425142" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <h1 class="hero-title">
+                Hi, I'm <span class="gradient-text">Prabhat</span>
+            </h1>
+            <h2 class="hero-subtitle">
+                Odoo Developer & ERP Specialist
+            </h2>
+            <p class="hero-description">
+                Creating custom Odoo modules that solve complex business problems.
+                Specialized in Odoo 19 development, workflow automation, and system integration.
+            </p>
+            <div class="hero-buttons">
+                <a href="#modules" class="btn btn-primary">
+                    <i class="fas fa-code"></i> View My Modules
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <i class="fas fa-envelope"></i> Get In Touch
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">20+</span>
+                    <span class="stat-label">Modules</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Clients</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">5+</span>
+                    <span class="stat-label">Years Exp</span>
+                </div>
             </div>
         </div>
-        <div class="hero-image">
-            <div class="profile-circle">
-                <i class="fas fa-code"></i>
+        <div class="hero-visual">
+            <div class="code-window">
+                <div class="window-header">
+                    <div class="dots">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <span>odoo_module.py</span>
+                </div>
+                <div class="window-content">
+                    <pre><code><span class="keyword">class</span> <span class="class">CustomModule</span>(<span class="class">models</span>.<span class="class">Model</span>):
+    <span class="keyword">_inherit</span> = <span class="string">'sale.order'</span>
+
+    <span class="keyword">def</span> <span class="function">action_confirm</span>(<span class="variable">self</span>):
+        <span class="comment"># Custom logic for order confirmation</span>
+        <span class="keyword">super</span>().<span class="function">action_confirm</span>()
+        <span class="variable">self</span>.<span class="function">_send_whatsapp_notification</span>()</code></pre>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about" class="section about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Professional Odoo Developer</h3>
-                    <p>I'm a dedicated Odoo developer with expertise in creating custom modules that extend Odoo's functionality. I specialize in:</p>
-                    <ul class="skills-list">
-                        <li><i class="fas fa-check"></i> Odoo 19 Module Development</li>
-                        <li><i class="fas fa-check"></i> Custom Business Solutions</li>
-                        <li><i class="fas fa-check"></i> Python & Odoo Framework</li>
-                        <li><i class="fas fa-check"></i> XML Views & QWeb Reports</li>
-                        <li><i class="fas fa-check"></i> Database Management</li>
-                        <li><i class="fas fa-check"></i> API Integrations</li>
-                    </ul>
+            <div class="section-header">
+                <span class="section-tag">01. Who I Am</span>
+                <h2 class="section-title">About Me</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-content">
+                    <p class="about-text">
+                        I'm a passionate <strong>Odoo Developer</strong> with expertise in creating custom modules
+                        that extend Odoo's functionality. With over <strong>5 years of experience</strong>,
+                        I've helped businesses streamline their operations through tailored ERP solutions.
+                    </p>
+                    <p class="about-text">
+                        My journey with Odoo started when I realized the power of open-source ERP systems.
+                        Since then, I've developed modules for various industries including retail,
+                        manufacturing, healthcare, and services.
+                    </p>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Odoo 19 Certified Developer</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Expert in Python & Odoo Framework</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Specialized in Module Development</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>API Integration Specialist</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="about-stats">
-                    <div class="stat-box">
-                        <h3>5+</h3>
-                        <p>Years Experience</p>
-                    </div>
-                    <div class="stat-box">
-                        <h3>20+</h3>
-                        <p>Modules Created</p>
-                    </div>
-                    <div class="stat-box">
-                        <h3>50+</h3>
-                        <p>Happy Clients</p>
+                <div class="about-image">
+                    <div class="image-frame">
+                        <div class="code-block">
+                            <pre><code># My Development Philosophy
+<span class="keyword">def</span> <span class="function">create_solution</span>(problem):
+    <span class="comment"># Understand the business need</span>
+    requirements = <span class="function">analyze_requirements</span>(problem)
+    
+    <span class="comment"># Design modular architecture</span>
+    module = <span class="function">design_module</span>(requirements)
+    
+    <span class="comment"># Implement with best practices</span>
+    <span class="function">implement_with_quality</span>(module)
+    
+    <span class="keyword">return</span> module</code></pre>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
+    <!-- Skills Section -->
+    <section id="skills" class="section skills">
         <div class="container">
-            <h2 class="section-title">My Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <h3>Odoo Module Development</h3>
-                    <p>Custom modules for Odoo 19, 18, 17. From simple features to complex business solutions.</p>
+            <div class="section-header">
+                <span class="section-tag">02. My Expertise</span>
+                <h2 class="section-title">Technical Skills</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><i class="fas fa-laptop-code"></i> Odoo Development</h3>
+                    <ul class="skill-list">
+                        <li>
+                            <span>Module Development</span>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 95%"></div></div>
+                        </li>
+                        <li>
+                            <span>QWeb Reports</span>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+                        </li>
+                        <li>
+                            <span>Workflow Automation</span>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 92%"></div></div>
+                        </li>
+                        <li>
+                            <span>Odoo.sh Deployment</span>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 88%"></div></div>
+                        </li>
+                    </ul>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <h3>Odoo Customization</h3>
-                    <p>UI/UX customization, workflow automation, and process optimization.</p>
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Programming</h3>
+                    <ul class="skill-list">
+                        <li>
+                            <span>Python</span>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 95%"></div></div>
+                        </li>
+                        <li>
+                            <span>JavaScript</span>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+                        </li>
+                        <li>
+                            <span>XML/HTML</span>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+                        </li>
+                        <li>
+                            <span>SQL/PostgreSQL</span>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 88%"></div></div>
+                        </li>
+                    </ul>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-plug"></i>
-                    </div>
-                    <h3>API Integration</h3>
-                    <p>Integrate Odoo with third-party systems, payment gateways, and external APIs.</p>
+                <div class="skill-category">
+                    <h3><i class="fas fa-tools"></i> Tools & Technologies</h3>
+                    <ul class="skill-list">
+                        <li>
+                            <span>Git/Version Control</span>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 90%"></div></div>
+                        </li>
+                        <li>
+                            <span>Docker</span>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 80%"></div></div>
+                        </li>
+                        <li>
+                            <span>Linux/Server Management</span>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 85%"></div></div>
+                        </li>
+                        <li>
+                            <span>API Integration</span>
+                            <div class="skill-bar"><div class="skill-progress" style="width: 92%"></div></div>
+                        </li>
+                    </ul>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-database"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section experience">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">03. Journey</span>
+                <h2 class="section-title">Experience & Timeline</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2023 - Present</span>
+                        <h3>Freelance Odoo Developer</h3>
+                        <p class="timeline-company">Self-Employed</p>
+                        <p>Developing custom Odoo modules for clients worldwide.
+                           Specializing in sales, inventory, and manufacturing modules.
+                           Published multiple modules on Odoo Apps Store.</p>
+                        <div class="timeline-tags">
+                            <span>Odoo 19</span>
+                            <span>Python</span>
+                            <span>Freelance</span>
+                        </div>
                     </div>
-                    <h3>Data Migration</h3>
-                    <p>Migrate data from legacy systems to Odoo with data validation.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2021 - 2023</span>
+                        <h3>Odoo Developer</h3>
+                        <p class="timeline-company">IT Solutions Company</p>
+                        <p>Worked on enterprise Odoo implementations.
+                           Developed custom modules for retail and manufacturing clients.
+                           Managed Odoo.sh deployments and migrations.</p>
+                        <div class="timeline-tags">
+                            <span>Odoo 15/16/17</span>
+                            <span>Enterprise</span>
+                            <span>Implementation</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2019 - 2021</span>
+                        <h3>Junior Odoo Developer</h3>
+                        <p class="timeline-company">Software Development Firm</p>
+                        <p>Started my Odoo journey working on small customizations.
+                           Learned Odoo framework and module development basics.
+                           Contributed to existing module maintenance.</p>
+                        <div class="timeline-tags">
+                            <span>Odoo 12/13</span>
+                            <span>Learning</span>
+                            <span>Growth</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Modules Section -->
-    <section id="modules" class="modules">
+    <section id="modules" class="section modules">
         <div class="container">
-            <h2 class="section-title">My Modules</h2>
-            <p class="section-subtitle">Custom Odoo modules available on Odoo Apps Store</p>
+            <div class="section-header">
+                <span class="section-tag">04. My Work</span>
+                <h2 class="section-title">Odoo Modules</h2>
+            </div>
+            <div class="modules-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="sales">Sales</button>
+                <button class="filter-btn" data-filter="inventory">Inventory</button>
+                <button class="filter-btn" data-filter="website">Website</button>
+            </div>
             <div class="modules-grid">
-                <div class="module-card">
+                <div class="module-card" data-category="sales">
                     <div class="module-image">
                         <i class="fas fa-percentage"></i>
                     </div>
                     <div class="module-content">
+                        <div class="module-category">Sales</div>
                         <h3>Minimum Margin % in Pricelist</h3>
-                        <p>Set minimum margins as percentages instead of fixed amounts in pricelists.</p>
-                        <div class="module-tags">
-                            <span>Sales</span>
-                            <span>Pricing</span>
+                        <p>Set minimum profit margins as percentages in pricelists.
+                           Automatically calculates minimum price based on cost.</p>
+                        <div class="module-features">
+                            <span><i class="fas fa-check"></i> Percentage-based margins</span>
+                            <span><i class="fas fa-check"></i> Auto price calculation</span>
+                            <span><i class="fas fa-check"></i> Validation rules</span>
                         </div>
                         <div class="module-footer">
                             <span class="price">$12</span>
-                            <a href="#" class="buy-btn">View Details</a>
+                            <span class="downloads"><i class="fas fa-download"></i> 100+</span>
+                            <a href="#" class="view-btn">View Details</a>
                         </div>
                     </div>
                 </div>
-                <div class="module-card">
-                    <div class="module-image">
-                        <i class="fas fa-file-invoice"></i>
-                    </div>
-                    <div class="module-content">
-                        <h3>Document Expiry Tracker</h3>
-                        <p>Track document expirations with automated reminders and alerts.</p>
-                        <div class="module-tags">
-                            <span>Documents</span>
-                            <span>Compliance</span>
-                        </div>
-                        <div class="module-footer">
-                            <span class="price">$15</span>
-                            <a href="#" class="buy-btn">View Details</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="module-card">
+                <div class="module-card" data-category="inventory">
                     <div class="module-image">
                         <i class="fas fa-barcode"></i>
                     </div>
                     <div class="module-content">
+                        <div class="module-category">Inventory</div>
                         <h3>Smart Barcode Generator</h3>
-                        <p>Generate barcodes using Code 128, QR, EAN-13 formats for products.</p>
-                        <div class="module-tags">
-                            <span>Inventory</span>
-                            <span>Barcode</span>
+                        <p>Generate professional barcodes for products using multiple formats.
+                           Supports Code 128, QR, EAN-13, and UPC-A.</p>
+                        <div class="module-features">
+                            <span><i class="fas fa-check"></i> Multiple barcode formats</span>
+                            <span><i class="fas fa-check"></i> Bulk generation</span>
+                            <span><i class="fas fa-check"></i> Label printing</span>
                         </div>
                         <div class="module-footer">
                             <span class="price">$18</span>
-                            <a href="#" class="buy-btn">View Details</a>
+                            <span class="downloads"><i class="fas fa-download"></i> 85+</span>
+                            <a href="#" class="view-btn">View Details</a>
                         </div>
                     </div>
                 </div>
-                <div class="module-card">
+                <div class="module-card" data-category="website">
                     <div class="module-image">
                         <i class="fab fa-whatsapp"></i>
                     </div>
                     <div class="module-content">
+                        <div class="module-category">Communication</div>
                         <h3>WhatsApp Integration Plus</h3>
-                        <p>Send and receive WhatsApp messages directly from Odoo records.</p>
-                        <div class="module-tags">
-                            <span>Communication</span>
-                            <span>WhatsApp</span>
+                        <p>Send and receive WhatsApp messages directly from Odoo.
+                           Automated notifications and template messages.</p>
+                        <div class="module-features">
+                            <span><i class="fas fa-check"></i> Two-way messaging</span>
+                            <span><i class="fas fa-check"></i> Template messages</span>
+                            <span><i class="fas fa-check"></i> Automation</span>
                         </div>
                         <div class="module-footer">
                             <span class="price">$35</span>
-                            <a href="#" class="buy-btn">View Details</a>
+                            <span class="downloads"><i class="fas fa-download"></i> 150+</span>
+                            <a href="#" class="view-btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="module-card" data-category="inventory">
+                    <div class="module-image">
+                        <i class="fas fa-file-invoice"></i>
+                    </div>
+                    <div class="module-content">
+                        <div class="module-category">Documents</div>
+                        <h3>Document Expiry Tracker</h3>
+                        <p>Track document expirations with automated reminders.
+                           Never miss a contract or certification renewal.</p>
+                        <div class="module-features">
+                            <span><i class="fas fa-check"></i> Expiry tracking</span>
+                            <span><i class="fas fa-check"></i> Email reminders</span>
+                            <span><i class="fas fa-check"></i> Dashboard view</span>
+                        </div>
+                        <div class="module-footer">
+                            <span class="price">$15</span>
+                            <span class="downloads"><i class="fas fa-download"></i> 95+</span>
+                            <a href="#" class="view-btn">View Details</a>
                         </div>
                     </div>
                 </div>
@@ -204,52 +398,54 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact" class="section contact">
         <div class="container">
-            <h2 class="section-title">Contact Me</h2>
-            <p class="section-subtitle">Have a project in mind? Let's discuss!</p>
-            <div class="contact-content">
+            <div class="section-header">
+                <span class="section-tag">05. Get In Touch</span>
+                <h2 class="section-title">Contact Me</h2>
+            </div>
+            <div class="contact-grid">
                 <div class="contact-info">
-                    <div class="info-item">
+                    <div class="info-card">
                         <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p>prabhatshaw24@gmail.com</p>
-                        </div>
+                        <h4>Email</h4>
+                        <p>prabhatshaw24@gmail.com</p>
                     </div>
-                    <div class="info-item">
+                    <div class="info-card">
                         <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Phone</h4>
-                            <p>+91 7982425142</p>
-                        </div>
+                        <h4>Phone</h4>
+                        <p>+91 7982425142</p>
                     </div>
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Location</h4>
-                            <p>India (Remote Available)</p>
-                        </div>
+                    <div class="info-card">
+                        <i class="fab fa-github"></i>
+                        <h4>GitHub</h4>
+                        <p>github.com/shabdprabhat</p>
                     </div>
-                    <div class="social-links contact-social">
-                        <a href="https://github.com/shabdprabhat" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://linkedin.com/in/shabdprabhat" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://wa.me/917982425142" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <div class="info-card">
+                        <i class="fab fa-linkedin"></i>
+                        <h4>LinkedIn</h4>
+                        <p>linkedin.com/in/shabdprabhat</p>
                     </div>
                 </div>
                 <div class="contact-form-container">
                     <form id="contact-form" class="contact-form">
-                        <div class="form-group">
-                            <input type="text" name="name" placeholder="Your Name" required>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Your Name</label>
+                                <input type="text" name="name" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Your Email</label>
+                                <input type="email" name="email" placeholder="john@example.com" required>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <input type="email" name="email" placeholder="Your Email" required>
+                            <label>Subject</label>
+                            <input type="text" name="subject" placeholder="Project Inquiry">
                         </div>
                         <div class="form-group">
-                            <input type="text" name="subject" placeholder="Subject">
-                        </div>
-                        <div class="form-group">
-                            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                            <label>Message</label>
+                            <textarea name="message" placeholder="Tell me about your project..." rows="5" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary btn-block">
                             <i class="fas fa-paper-plane"></i> Send Message
@@ -265,7 +461,11 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <a href="#home">Prabhat</a>
+                    <a href="#home">
+                        <span class="logo-bracket">&lt;</span>
+                        Prabhat
+                        <span class="logo-bracket">/&gt;</span>
+                    </a>
                     <p>Creating custom Odoo modules that solve real business problems.</p>
                 </div>
                 <div class="footer-links">
@@ -273,19 +473,24 @@
                     <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
-                        <li><a href="#services">Services</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#experience">Experience</a></li>
                         <li><a href="#modules">Modules</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-contact">
-                    <h4>Contact Info</h4>
-                    <p><i class="fas fa-envelope"></i> prabhatshaw24@gmail.com</p>
-                    <p><i class="fas fa-phone"></i> +91 7982425142</p>
+                <div class="footer-social">
+                    <h4>Connect</h4>
+                    <div class="social-icons">
+                        <a href="https://github.com/shabdprabhat" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/in/shabdprabhat" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://wa.me/917982425142" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="mailto:prabhatshaw24@gmail.com"><i class="fas fa-envelope"></i></a>
+                    </div>
                 </div>
             </div>
-                <div class="footer-bottom">
-                <p>&copy; 2025 Prabhat. All rights reserved.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Prabhat. All rights reserved. Built with Odoo expertise.</p>
             </div>
         </div>
     </footer>
