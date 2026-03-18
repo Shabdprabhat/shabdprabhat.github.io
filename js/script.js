@@ -1,93 +1,3 @@
-/* ===== PARTICLE BACKGROUND SYSTEM ===== */
-function initParticles() {
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
-    const particlesContainer = document.getElementById('particles-js');
-    
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    canvas.style.position = 'fixed';
-    canvas.style.top = '0';
-    canvas.style.left = '0';
-    canvas.style.width = '100%';
-    canvas.style.height = '100%';
-    canvas.style.zIndex = '-1';
-    
-    particlesContainer.appendChild(canvas);
-    
-    const particles = [];
-    const particleCount = 100;
-    
-    class Particle {
-        constructor() {
-            this.x = Math.random() * canvas.width;
-            this.y = Math.random() * canvas.height;
-            this.size = Math.random() * 2 + 0.5;
-            this.speedX = Math.random() * 0.5 - 0.25;
-            this.speedY = Math.random() * 0.5 - 0.25;
-            this.opacity = Math.random() * 0.5 + 0.2;
-        }
-        
-        update() {
-            this.x += this.speedX;
-            this.y += this.speedY;
-            
-            if (this.x > canvas.width) this.x = 0;
-            if (this.x < 0) this.x = canvas.width;
-            if (this.y > canvas.height) this.y = 0;
-            if (this.y < 0) this.y = canvas.height;
-        }
-        
-        draw() {
-            ctx.fillStyle = `rgba(99, 102, 241, ${this.opacity})`;
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.fill();
-        }
-    }
-    
-    // Create particles
-    for (let i = 0; i < particleCount; i++) {
-        particles.push(new Particle());
-    }
-    
-    function animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        
-        particles.forEach(particle => {
-            particle.update();
-            particle.draw();
-        });
-        
-        // Draw connections
-        particles.forEach((p1, i) => {
-            particles.slice(i + 1).forEach(p2 => {
-                const dx = p1.x - p2.x;
-                const dy = p1.y - p2.y;
-                const distance = Math.sqrt(dx * dx + dy * dy);
-                
-                if (distance < 100) {
-                    ctx.strokeStyle = `rgba(99, 102, 241, ${0.1 * (1 - distance / 100)})`;
-                    ctx.lineWidth = 0.5;
-                    ctx.beginPath();
-                    ctx.moveTo(p1.x, p1.y);
-                    ctx.lineTo(p2.x, p2.y);
-                    ctx.stroke();
-                }
-            });
-        });
-        
-        requestAnimationFrame(animate);
-    }
-    
-    animate();
-    
-    window.addEventListener('resize', () => {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-    });
-}
-
 /* ===== TYPING EFFECT ===== */
 function initTypingEffect() {
     const typingElement = document.querySelector('.typing-text');
@@ -133,11 +43,11 @@ function initNavigation() {
     // Scroll effect
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(10, 10, 15, 0.95)';
-            navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
+            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            navbar.style.boxShadow = '0 4px 20px rgba(102, 126, 234, 0.2)';
         } else {
-            navbar.style.background = 'rgba(10, 10, 15, 0.8)';
-            navbar.style.boxShadow = 'none';
+            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            navbar.style.boxShadow = '0 2px 10px rgba(102, 126, 234, 0.1)';
         }
     });
     
@@ -296,35 +206,14 @@ function initContactForm() {
     }
 }
 
-/* ===== CODE SYNTAX HIGHLIGHTING ===== */
-function initSyntaxHighlighting() {
-    const codeBlocks = document.querySelectorAll('.window-content code, .code-block code');
-    
-    codeBlocks.forEach(block => {
-        // Add line numbers
-        const lines = block.innerHTML.split('\n');
-        let numberedHTML = '';
-        
-        lines.forEach((line, index) => {
-            if (line.trim()) {
-                numberedHTML += `<span class="line-number">${index + 1}</span>${line}\n`;
-            }
-        });
-        
-        block.innerHTML = numberedHTML;
-    });
-}
-
 /* ===== INITIALIZE EVERYTHING ===== */
 document.addEventListener('DOMContentLoaded', () => {
-    initParticles();
     initTypingEffect();
     initNavigation();
     initSmoothScroll();
     initModuleFilter();
     initScrollAnimations();
     initContactForm();
-    initSyntaxHighlighting();
     
-    console.log('%c👨‍💻 Portfolio loaded successfully!', 'color: #6366f1; font-size: 16px; font-weight: bold;');
+    console.log('%c🎨 Colorful Portfolio loaded!', 'color: #ff6b9d; font-size: 16px; font-weight: bold;');
 });
